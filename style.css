@@ -48,7 +48,7 @@ husk mørkt/lyst farge på header og footer. hvordan blir dette?
     background-color:var(--test);
 
 
-    border-bottom:2px dotted black;
+    border-bottom:2px solid black;
 
     width:100vw;
     height:fit-content;
