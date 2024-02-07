@@ -1,0 +1,194 @@
+*{
+    margin:0;
+    overflow-x:hidden;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+
+    user-select:none;
+}
+
+:root{
+    --test: 2px solid red;
+    --headerfooterColor: #3f3f3f;
+}
+
+/*
+husk mørkt/lyst farge på header og footer. hvordan blir dette?
+
+
+
+*/
+
+
+
+
+
+#header{
+    height:30px;
+    width:100vw;
+    background-color:var(--headerfooterColor);
+    position:fixed;
+
+    z-index:1;
+    
+}
+#footer{
+    height:250px;
+    width:100vw;
+    background-color:var(--headerfooterColor);
+}
+
+
+
+
+
+/*------------------------------------------------NAVIGATION BAR-----------------------------------------------*/
+
+
+#navigation{
+    border:var(--test);
+
+
+    border-bottom:2px dotted black;
+
+    width:100vw;
+    height:200px;
+    
+    
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+    
+
+
+#navigation #logo-container{
+    border:var(--test);
+
+
+
+
+    width:50vw;
+    position:absolute;
+    left:0;
+    text-align:center;
+}
+
+#navigation #logo-container img{
+    flex-shrink:0;
+    width:500px;
+}
+
+#navigation #navbutton-container{
+    border:var(--test);
+
+
+
+    width:47vw;
+    position:absolute;
+    right:0;
+    text-align:left;
+    display:flex;
+    gap:100px;
+}
+
+#navigation #navbutton-container button{
+    flex-shrink:0;
+    border:1px solid blue;
+    background-color:rgba(255, 255, 255, 0.1);
+    
+}
+
+
+
+
+
+
+
+@media only screen and (max-width: 1000px) {
+
+    #navigation{
+
+        margin-top:30px;
+    }
+
+
+    #navigation #logo-container{
+        width:100vw;
+        display:flex;
+        position:absolute;
+        justify-content:center;
+    }
+    #navigation #logo-container img{
+        content:url("Hauger\ As\ logo\ hoy.png");
+    }
+
+    #navigation #navbutton-container{
+        display:none;
+    }
+
+    
+}
+
+
+/*--------------------------------------------------MAIN TEXT-------------------------------------------------*/
+
+
+#maintext-container{
+    border:var(--test);
+    background-color:rgba(255, 0, 0, 0.096);
+
+    margin:50px 40px 50px 40px;
+
+    height:1000px;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:50px;
+    
+}
+
+
+#maintext-container div{
+    border:var(--test);
+}
+
+#maintext-container #firstparagraph{
+    margin-top:50px;
+}
+
+#maintext-container #firstparagraph h1{
+    text-align:left;
+    color:red;
+}
+#maintext-container #firstparagraph p{
+    text-align:left;
+    color:blue;
+}
+
+
+#maintext-container #secondparagraph h1{
+    text-align:center;
+    color:green;
+}
+#maintext-container #secondparagraph p{
+    text-align:center;
+    color:purple;
+}
+
+
+#maintext-container #thirdparagraph h1{
+    text-align:right;
+    color:orange;
+}
+#maintext-container #thirdparagraph p{
+    text-align:right;
+    color:yellow;
+}
+
+
+
+
+
+
+
