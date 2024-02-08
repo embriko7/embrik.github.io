@@ -1,3 +1,39 @@
+/*
+husk mørkt/lyst farge på header og footer. hvordan blir dette?
+
+
+
+-------------------BAKGRUNN--------------------
+#bakgrunn{
+    height:100vh;
+    position:fixed;
+    z-index:-1;
+    top:0;
+    right:0;
+    filter:brightness(50%)
+}
+
+
+
+#bakgrunn{
+    height:200vh;
+    position:fixed;
+    z-index:-1;
+    top:-250px;
+    left:-500px;
+    filter:brightness(40%)
+}
+
+body{
+    background:url("test.jpg") no-repeat;
+    background-size:contain;
+}
+
+*/
+
+
+
+
 *{
     margin:0;
     overflow-x:hidden;
@@ -11,26 +47,8 @@
     --headerfooterColor: #3f3f3f;
 }
 
-/*
-husk mørkt/lyst farge på header og footer. hvordan blir dette?
 
-
-
-
-#bakgrunn{
-        height:100vh;
-        position:fixed;
-        z-index:-1;
-        top:0;
-        right:0;
-        filter:brightness(50%)
-    }
-
-
-*/
-
-
-
+/*------------------------------------------------FIXED PÅ HVER SIDE-----------------------------------------------*/
 
 
 #header{
@@ -48,14 +66,8 @@ husk mørkt/lyst farge på header og footer. hvordan blir dette?
     background-color:var(--headerfooterColor);
 }
 
-#bakgrunn{
-    height:200vh;
-    position:fixed;
-    z-index:-1;
-    top:-250px;
-    left:-500px;
-    filter:brightness(40%)
-}
+
+
 
 
 
@@ -109,9 +121,6 @@ husk mørkt/lyst farge på header og footer. hvordan blir dette?
     border:1px solid black;
     border-radius:50px;
     background-color:rgba(255, 255, 255)
-    /*background-image:url(bakgrunn.jpg);
-    background-position-x: right;
-    background-position-y: top;*/
     
 }
 
@@ -183,6 +192,8 @@ husk mørkt/lyst farge på header og footer. hvordan blir dette?
 
 
 
+
+/*--------------------------------------------------ANNEN BREDDE-------------------------------------------------*/
 
 
 @media only screen and (max-width: 1000px) {
