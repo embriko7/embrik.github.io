@@ -2,18 +2,29 @@
     margin:0;
     overflow-x:hidden;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
-
+    box-sizing:border-box;
     user-select:none;
 }
 
+
 :root{
-    --test: transparent;
     --headerfooterColor: #3f3f3f;
 }
 
 /*
 husk mørkt/lyst farge på header og footer. hvordan blir dette?
 
+
+
+
+#bakgrunn{
+        height:100vh;
+        position:fixed;
+        z-index:-1;
+        top:0;
+        right:0;
+        filter:brightness(50%)
+    }
 
 
 */
@@ -27,8 +38,8 @@ husk mørkt/lyst farge på header og footer. hvordan blir dette?
     width:100vw;
     background-color:var(--headerfooterColor);
     position:fixed;
-
-    z-index:1;
+    top:0;
+    z-index:999;
     
 }
 #footer{
@@ -37,20 +48,29 @@ husk mørkt/lyst farge på header og footer. hvordan blir dette?
     background-color:var(--headerfooterColor);
 }
 
-
+#bakgrunn{
+    height:200vh;
+    position:fixed;
+    z-index:-1;
+    top:-250px;
+    left:-500px;
+    filter:brightness(40%)
+}
 
 
 
 /*------------------------------------------------NAVIGATION BAR-----------------------------------------------*/
 
+#navigation-container{
+    width:100vw;
+    display:flex;
+    justify-content:center;
+}
+
 
 #navigation{
-    background-color:var(--test);
-
-
-    border-bottom:2px solid black;
-
-    width:100vw;
+    border-bottom:1px solid black;
+    width:80vw;
     height:fit-content;
     padding-top:110px;
     padding-bottom:80px;
@@ -58,17 +78,11 @@ husk mørkt/lyst farge på header og footer. hvordan blir dette?
     
     display:flex;
     align-items:center;
-    justify-content:center;
 }
     
 
 
 #navigation #logo-container{
-    background-color:var(--test);
-
-
-
-
     width:50vw;
     position:absolute;
     left:0;
@@ -81,10 +95,6 @@ husk mørkt/lyst farge på header og footer. hvordan blir dette?
 }
 
 #navigation #navbutton-container{
-    background-color:var(--test);
-
-
-
     width:47vw;
     position:absolute;
     right:0;
@@ -95,8 +105,13 @@ husk mørkt/lyst farge på header og footer. hvordan blir dette?
 
 #navigation #navbutton-container button{
     flex-shrink:0;
-    border:1px solid blue;
-    background-color:rgba(255, 255, 255, 0.1);
+    font-size:17px;
+    border:1px solid black;
+    border-radius:50px;
+    background-color:rgba(255, 255, 255)
+    /*background-image:url(bakgrunn.jpg);
+    background-position-x: right;
+    background-position-y: top;*/
     
 }
 
@@ -106,25 +121,7 @@ husk mørkt/lyst farge på header og footer. hvordan blir dette?
 
 
 
-@media only screen and (max-width: 1000px) {
 
-    #navigation #logo-container{
-        width:100vw;
-        display:flex;
-        position:absolute;
-        justify-content:center;
-    }
-    #navigation #logo-container img{
-        content:url("Hauger\ As\ logo\ hoy.png");
-        width:300px;
-    }
-
-    #navigation #navbutton-container{
-        display:none;
-    }
-
-    
-}
 
 
 /*--------------------------------------------------MAIN TEXT-------------------------------------------------*/
@@ -188,3 +185,26 @@ husk mørkt/lyst farge på header og footer. hvordan blir dette?
 
 
 
+@media only screen and (max-width: 1000px) {
+
+
+
+
+
+    #navigation #logo-container{
+        width:100vw;
+        display:flex;
+        position:absolute;
+        justify-content:center;
+    }
+    #navigation #logo-container img{
+        content:url("Hauger\ As\ logo\ hoy.png");
+        width:300px;
+    }
+
+    #navigation #navbutton-container{
+        display:none;
+    }
+
+    
+}
