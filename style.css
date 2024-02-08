@@ -76,6 +76,7 @@
         padding-top:50px;
         padding-bottom:50px;
         width:90vw;
+        max-width:500px;
     }
     
     #maintext{
