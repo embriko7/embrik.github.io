@@ -71,16 +71,16 @@
     #logo img{
         padding-top:50px;
         padding-bottom:50px;
-        width:300px;
+        width:90vw;
     }
     
     #maintext{
         text-align:center;
     }
     #maintext h1{
-        font-size:21px;
+        font-size:20px;
     }
     #maintext p{
-        font-size:18px;
+        font-size:17px;
     }
 }
