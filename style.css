@@ -13,6 +13,13 @@
 
 /*----------------------------------------------------------------------------------------------------------*/
 
+#body{
+    background: #ECE9E6;
+    background: -webkit-linear-gradient(to right, #FFFFFF, #ECE9E6);
+    background: linear-gradient(to right, #FFFFFF, #ECE9E6);
+
+}
+
 
 #header{
     position:fixed;
@@ -20,7 +27,10 @@
     height:80px;
     width:100vw;
     z-index:999;
-    background-color:var(--headerfooterColor);
+    background: #141E30;  
+    background: -webkit-linear-gradient(to right, #243B55, #141E30);
+    background: linear-gradient(to right, #243B55, #141E30);
+
 }
 #footer{
     position:absolute;
@@ -28,7 +38,9 @@
     height:100px;
     width:100vw;
     z-index:998;
-    background-color:var(--headerfooterColor);
+    background: #141E30;  
+    background: -webkit-linear-gradient(to right, #243B55, #141E30);
+    background: linear-gradient(to right, #243B55, #141E30);
 }
 
 
