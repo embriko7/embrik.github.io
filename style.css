@@ -2,17 +2,20 @@
     margin:0;
     padding:0;
 }
+html{
+    position:absolute;
+    inset:0;
+    background:#cfd9df;
+}
 
 body{
     background: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%) no-repeat;
-
     height:100vh;
-
     display:flex;
     justify-content:center;
     align-items:center;
+    
 }
-
 
 .container{
     max-width:800px;
