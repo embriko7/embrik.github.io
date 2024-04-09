@@ -6,26 +6,53 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="header"></div>
+
+    <div class="dropdown-menu">
+        <span class="material-symbols-outlined" id="sidebarButton" style="opacity:1;">menu</span>
+
+        <div class="menu-choices">
+            <li><a href="#">Om Oss</a></li>
+            <li><a href="#">Produkter</a></li>
+            <li><a href="#">Referanser</a></li>
+            <li><a href="#">Ta Kontakt</a></li>
+        </div>
+
+        
+        
+        
+    </div>
 
 
+    <div class="logo"><img src="./photos/Hauger As lang TRANSPARENT.png"></div>
+    
+    <div class="arrow-down">
+        <span class="material-symbols-outlined">arrow_downward_alt</span>
+    </div>
+      
 
-
-
-
-    <div class="info-container">
-
-
-
+    <div class="main-container">
         
 
         <div class="section-container">
-            <div class="container" style="width:100%; background:lightcoral;"></div>
+            <div class="container" style="width:100%; background:lightcoral;">
+                <h1>a</h1>
+            </div>
+
+
+
         </div>
 
         <div class="section-container">
-            <div class="container" style="background:pink;"></div>
-            <div class="container" style="background:pink;"></div>
+            <div class="container" style="background:pink;">
+                <h1>b</h1>
+            </div>
+
+
+            <div class="container" style="background:pink;">
+                <h1>c</h1>
+            </div>
+
+
         </div>
         
         <div class="section-container">
@@ -66,17 +93,39 @@
 
 
 
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+
+            var sidebarButton = document.querySelector(".dropdown-menu #sidebarButton");
+            var sideBar = document.querySelector(".dropdown-menu");
+            var sideBarText = document.querySelector(".dropdown-menu .menu-choices");
+            sidebarButton.onclick = function() {
+                sideBar.classList.toggle("active");
+                sideBarText.classList.toggle("active");
+            }
+
+
+            var menuItems = document.querySelectorAll(".dropdown-menu .menu-choices li a");
+            
+            menuItems.forEach(function(item) {
+                item.addEventListener("click", function() {
+                    console.log(item.textContent);
+                })
+            })
+
+
+            var scrollButton = document.querySelector(".arrow-down");
+            scrollButton.addEventListener("click", function() {
+                console.log("SCROLLED")
+            })
 
 
 
 
-    <div class="footer"></div>
+        })
 
 
-
-
-
-
+    </script>
 
 
 
@@ -84,49 +133,114 @@
 *{
     margin:0;
     padding:0;
+    user-select:none;
 }
 
-html{
-    background:red;
-}
 body{
-    background: #4B79A1;
-    background: -webkit-linear-gradient(to top, #385b77, #4B79A1);
-    background: linear-gradient(to top, #385b77, #4B79A1);
-
     display:flex;
     align-items:center;
     flex-direction:column;
-    gap:20px;
 }
 
 
-.header, .footer{
-    width:100%;
-    height:80px;
+.logo{
+    background:skyblue;
+    width:100vw;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    
+}
+
+.logo img{
+    width:95vw;
     background:red;
 }
 
-.info-container{
-    width:85vw;
+
+.arrow-down{
+    position:absolute;
+    bottom:50px;
+
+    background:red;
+}
+.arrow-down .material-symbols-outlined{
+    font-size:50px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+}
+
+.dropdown-menu{
+    position:absolute;
+    top:20px;
+    left:20px;
+    padding:5px;
+    border-radius:10px;
+
+    color:inherit;
+    width:25px;
+    height:25px;
+
+    background:red;
+
+}
+.dropdown-menu.active{
+    width:100px;
+    height:170px;
+}
+.dropdown-menu .menu-choices.active{
+    opacity:1;
+    transform:translate(0, 0);
+    width:100%;
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:13px;
+
+    transition: all 0.5 ease;
+}
+
+.dropdown-menu .menu-choices{
+    opacity:0;
+    transform:translate(0, -100px);
+}
+
+
+.dropdown-menu .material-symbols-outlined{
+    z-index:999;
+    font-size:25px;
+    position:absolute;
+    display:flex;
+    justify-content:left;
+    align-items:center;
+}
+.dropdown-menu li{list-style-type:none;}
+.dropdown-menu li a{color:inherit; text-decoration:none;}
+
+
+.main-container{
+    width:95vw;
     height:fit-content;
     background:blue;
 
     display:flex;
     flex-direction:column;
 }
-
-.info-container .section-container{
-    height:125px;
+.main-container .section-container{
+    height:100px;
     background:green;
-    margin:20px;
+    margin:10px;
 
     display:flex;
     flex-direction:row;
-    gap:10px;/*-------------------------TRØBBEL?--------------------------------*/
+    gap:10px;                   /*-------------------------TRØBBEL?--------------------------------*/
 }
-
-.info-container .section-container .container{
+.main-container .section-container .container{
     height:100%;
     width:50%;
 }
