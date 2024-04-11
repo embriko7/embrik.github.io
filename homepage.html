@@ -9,87 +9,67 @@
 <body>
 
     <div class="dropdown-menu">
-        <span class="material-symbols-outlined" id="sidebarButton" style="opacity:1;">menu</span>
 
-        <div class="menu-choices">
-            <li><a href="#">Om Oss</a></li>
-            <li><a href="#">Produkter</a></li>
-            <li><a href="#">Referanser</a></li>
-            <li><a href="#">Ta Kontakt</a></li>
+        <span class="material-symbols-outlined dropdownBtn">menu</span>
+
+        <div class="menu-content">
+            <li><a href="#OmOss">Om Oss</a></li>
+            <li><a href="#Produkter">Produkter</a></li>
+            <li><a href="#Referanser">Referanser</a></li>
+            <li><a href="#TaKontakt">Ta Kontakt</a></li>
         </div>
-
-        
-        
         
     </div>
+    
 
-
-    <div class="logo"><img src="./photos/Hauger As lang TRANSPARENT.png"></div>
+    <div class="logo"><img src="./photos/Hauger As lang TRANSPARENT.png" alt="HAUGER AS, VERKTOY & PLAST"></div>
     
     <div class="arrow-down">
         <span class="material-symbols-outlined">arrow_downward_alt</span>
     </div>
       
+    
+
+
+
+
+
+
+
+
+
+
+
 
     <div class="main-container">
         
+        <section id="OmOss">
+            <h1>Om Oss</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione quae praesentium ex eveniet quasi qui error necessitatibus quidem adipisci, consequuntur pariatur, sequi obcaecati soluta officia odit neque libero tenetur quod?</p>
 
-        <div class="section-container">
-            <div class="container" style="width:100%; background:lightcoral;">
-                <h1>a</h1>
-            </div>
+        </section>
 
+        <section id="Produkter">
+            <h1>Produkter</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem voluptate eligendi, ipsam consectetur dolores velit natus aliquam inventore error reprehenderit ullam rem expedita consequatur! Corporis impedit reiciendis fugiat at aperiam.</p>
+        </section>
 
+        <section id="Referanser">
+            <h1>Referanser</h1>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur veniam aspernatur perferendis aliquam repudiandae dolor modi corporis, impedit recusandae labore eveniet, explicabo amet error nostrum. Beatae, dignissimos tempore! Ipsam, quia!</p>
+        </section>
 
-        </div>
-
-        <div class="section-container">
-            <div class="container" style="background:pink;">
-                <h1>b</h1>
-            </div>
-
-
-            <div class="container" style="background:pink;">
-                <h1>c</h1>
-            </div>
-
-
-        </div>
+        <section id="TaKontakt">
+            <h1>Ta Kontakt</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat porro ipsam iure, veritatis cumque officiis fuga. Perferendis quas, commodi dolor nihil magnam distinctio repellendus ut incidunt repellat, quasi, temporibus cumque.</p>
+        </section>
         
-        <div class="section-container">
-            <div class="container"></div>
-            <div class="container" style="background:skyblue;"></div>
-        </div>
-
-        <div class="section-container">
-            <div class="container" style="background:greenyellow;"></div>
-            <div class="container"></div>
-        </div>
-
-        <div class="section-container">
-            <div class="container"></div>
-            <div class="container" style="background:darkcyan;"></div>
-        </div>
-
-        <div class="section-container">
-            <div class="container" style="background:midnightblue;"></div>
-            <div class="container" style="background:midnightblue;"></div>
-        </div>
-
-        <div class="section-container">
-            <div class="container"></div>
-            <div class="container" style="background:purple;"></div>
-        </div>
-
-        <div class="section-container">
-            <div class="container" style="background:steelblue;"></div>
-            <div class="container"></div>
-        </div>
-        
-
-
-
     </div>
+
+
+
+
+
 
 
 
@@ -97,22 +77,42 @@
     <script>
         document.addEventListener("DOMContentLoaded", function() {
 
-            var sidebarButton = document.querySelector(".dropdown-menu #sidebarButton");
-            var sideBar = document.querySelector(".dropdown-menu");
-            var sideBarText = document.querySelector(".dropdown-menu .menu-choices");
-            sidebarButton.onclick = function() {
-                sideBar.classList.toggle("active");
-                sideBarText.classList.toggle("active");
-            }
-
-
-            var menuItems = document.querySelectorAll(".dropdown-menu .menu-choices li a");
+            var dropdownBtn = document.querySelector(".dropdown-menu .dropdownBtn")
+            var dropdownMenu = document.querySelector(".dropdown-menu .menu-content")
+            dropdownBtn.addEventListener("click", function() {
+                dropdownMenu.classList.toggle("active");
+                dropdownBtn.classList.toggle("active");
+                console.log("active");
+            })
             
+            
+
+
+
+
+
+
+
+
+
+            var menuItems = document.querySelectorAll(".dropdown-menu .menu-content li a");
             menuItems.forEach(function(item) {
                 item.addEventListener("click", function() {
+
+                    
                     console.log(item.textContent);
+
+
+                    dropdownMenu.classList.toggle("active");
+                    dropdownBtn.classList.toggle("active");
                 })
             })
+
+
+
+
+
+
 
 
             var scrollButton = document.querySelector(".arrow-down");
@@ -129,7 +129,7 @@
     </script>
 
 
-
+    
 <style>
 *{
     margin:0;
@@ -141,11 +141,78 @@ body{
     display:flex;
     align-items:center;
     flex-direction:column;
+    list-style-type:none;
 }
 
 
+
+
+
+/*--------------------------------------------------------------*/
+
+.dropdown-menu{
+    position:absolute;
+    top:20px;
+    left:20px;
+    width:100px;
+    overflow:hidden;
+}
+
+
+
+.dropdown-menu .dropdownBtn{
+    height:25px;
+    width:25px;
+    transition:all 0.5s ease;
+    display:flex;
+    justify-content:left;
+
+    
+}
+.dropdownBtn.active{
+    transform:translateX(calc((100px / 2) - (25px / 2)))
+}
+
+
+
+.dropdown-menu .menu-content{
+    transform:translateX(-90px);
+    display:flex;
+    opacity:0;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    margin:15px 0 6px 0;
+    gap:15px;
+    transition:all 0.5s ease;
+
+}
+
+
+.dropdown-menu .menu-content.active{
+    transform:translate(0);
+    opacity:1;
+}
+
+.dropdown-menu .menu-content li a {
+    color:black;
+    text-decoration:none;
+}
+
+
+
+
+
+
+
+
+
+
+/*--------------------------------------------------------------*/
+
+
+
 .logo{
-    background:skyblue;
     width:100vw;
     height:100vh;
     display:flex;
@@ -156,95 +223,51 @@ body{
 
 .logo img{
     width:95vw;
-    background:red;
 }
+
+
+/*--------------------------------------------------------------*/
 
 
 .arrow-down{
     position:absolute;
     bottom:50px;
-
-    background:red;
 }
 .arrow-down .material-symbols-outlined{
-    font-size:50px;
+    font-size:25px;
     display:flex;
     justify-content:center;
     align-items:center;
     overflow:hidden;
 }
 
-.dropdown-menu{
-    position:absolute;
-    top:20px;
-    left:20px;
-    padding:5px;
-    border-radius:10px;
-
-    color:inherit;
-    width:25px;
-    height:25px;
-
-    background:red;
-
-}
-.dropdown-menu.active{
-    width:100px;
-    height:170px;
-}
-.dropdown-menu .menu-choices.active{
-    opacity:1;
-    transform:translate(0, 0);
-    width:100%;
-    height:100%;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
-    gap:13px;
-
-    transition: all 0.5 ease;
-}
-
-.dropdown-menu .menu-choices{
-    opacity:0;
-    transform:translate(0, -100px);
-}
 
 
-.dropdown-menu .material-symbols-outlined{
-    z-index:999;
-    font-size:25px;
-    position:absolute;
-    display:flex;
-    justify-content:left;
-    align-items:center;
-}
-.dropdown-menu li{list-style-type:none;}
-.dropdown-menu li a{color:inherit; text-decoration:none;}
+/*--------------------------------------------------------------*/
+
+
+
+
+
 
 
 .main-container{
-    width:95vw;
+    width:100vw;
     height:fit-content;
-    background:blue;
 
     display:flex;
     flex-direction:column;
 }
-.main-container .section-container{
-    height:100px;
-    background:green;
-    margin:10px;
 
-    display:flex;
-    flex-direction:row;
-    gap:10px;                   /*-------------------------TRØBBEL?--------------------------------*/
+.main-container section{
+    height:100vh;
 }
-.main-container .section-container .container{
-    height:100%;
-    width:50%;
-}
+
+
+/*--------------------------------------------------------------*/
+
+
+
 
 
 </style>
