@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <title>Hjemmeside</title>
 </head>
 <body>
 
-    <div class="dropdown-menu">
+    <div class="dropdown-menu" >
 
         <span class="material-symbols-outlined dropdownBtn">menu</span>
 
@@ -25,7 +26,7 @@
     <div class="logo"><img src="./photos/Hauger As lang TRANSPARENT.png" alt="HAUGER AS, VERKTOY & PLAST"></div>
     
     <div class="arrow-down">
-        <span class="material-symbols-outlined">arrow_downward_alt</span>
+        <span class="material-symbols-outlined"><a href="#OmOss">arrow_downward_alt</a></span>
     </div>
       
     
@@ -44,8 +45,8 @@
     <div class="main-container">
         
         <section id="OmOss">
-            <h1>EMMA MARIE RETARD RØLAND</h1>
-            <p>Ditt spøkefulle utsagn bragte meg munterhet og en humrende lyd falt ut av meg</p>
+            <h1>Om Oss</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione quae praesentium ex eveniet quasi qui error necessitatibus quidem adipisci, consequuntur pariatur, sequi obcaecati soluta officia odit neque libero tenetur quod?</p>
 
         </section>
 
@@ -127,159 +128,6 @@
 
 
     </script>
-
-
-    
-<style>
-*{
-    margin:0;
-    padding:0;
-    user-select:none;
-}
-
-html{
-    scroll-behavior: smooth
-}
-
-body{
-    display:flex;
-    align-items:center;
-    flex-direction:column;
-    list-style-type:none;
-}
-
-
-
-
-
-/*--------------------------------------------------------------*/
-
-.dropdown-menu{
-    position:absolute;
-    top:20px;
-    left:20px;
-    width:100px;
-    overflow:hidden;
-}
-
-
-
-.dropdown-menu .dropdownBtn{
-    height:25px;
-    width:25px;
-    transition:all 0.5s ease;
-    display:flex;
-    justify-content:left;
-
-    
-}
-.dropdownBtn.active{
-    transform:translateX(calc((100px / 2) - (25px / 2)))
-}
-
-
-
-.dropdown-menu .menu-content{
-    transform:translateX(-90px);
-    display:flex;
-    opacity:0;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    margin:15px 0 6px 0;
-    gap:15px;
-    transition:all 0.5s ease;
-
-}
-
-
-.dropdown-menu .menu-content.active{
-    transform:translate(0);
-    opacity:1;
-}
-
-.dropdown-menu .menu-content li a {
-    color:black;
-    text-decoration:none;
-}
-
-
-
-
-
-
-
-
-
-
-/*--------------------------------------------------------------*/
-
-
-
-.logo{
-    width:100vw;
-    height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    
-}
-
-.logo img{
-    width:95vw;
-}
-
-
-/*--------------------------------------------------------------*/
-
-
-.arrow-down{
-    position:absolute;
-    bottom:50px;
-}
-.arrow-down .material-symbols-outlined{
-    font-size:25px;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    overflow:hidden;
-}
-
-
-
-/*--------------------------------------------------------------*/
-
-
-
-
-
-
-
-.main-container{
-    width:100vw;
-    height:fit-content;
-
-    display:flex;
-    flex-direction:column;
-}
-
-.main-container section{
-    height:100vh;
-}
-
-
-/*--------------------------------------------------------------*/
-
-
-
-
-
-</style>
-
-
-
-
-
 
 </body>
 </html>
