@@ -11,7 +11,7 @@
 
     <div class="dropdown-menu" >
 
-        <span class="material-symbols-outlined dropdownBtn">menu</span>
+        <span class="material-symbols-outlined dropdownBtn startup">menu</span>
 
         <div class="menu-content">
             <li><a href="#OmOss">Om Oss</a></li>
@@ -76,50 +76,52 @@
 
 
     <script>
+
+
         document.addEventListener("DOMContentLoaded", function() {
 
+            //
+
             var dropdownBtn = document.querySelector(".dropdown-menu .dropdownBtn")
+            var dropdownBtnActive = document.querySelector(".dropdown-menu .dropdownBtn active")
             var dropdownMenu = document.querySelector(".dropdown-menu .menu-content")
             dropdownBtn.addEventListener("click", function() {
                 dropdownMenu.classList.toggle("active");
                 dropdownBtn.classList.toggle("active");
-                console.log("active");
-            })
-            
-            
 
-
-
-
-
-
-
-
-
-            var menuItems = document.querySelectorAll(".dropdown-menu .menu-content li a");
-            menuItems.forEach(function(item) {
-                item.addEventListener("click", function() {
-
-                    
-                    console.log(item.textContent);
-
+                setTimeout(function() {
 
                     dropdownMenu.classList.toggle("active");
                     dropdownBtn.classList.toggle("active");
-                })
+
+                }, 5000)
             })
 
+            //TRANSITION ON WINDOW LOAD
+
+            var logoTransition = document.querySelector(".logo img");
+            var arrowDownTransition = document.querySelector(".arrow-down")
+            window.onload = function() {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+
+                setTimeout(function() {
+                    logoTransition.style.transform = "translateY(-50px)";
+                    logoTransition.style.opacity = "1";
+
+                    arrowDownTransition.style.transform = "translateY(0px)"
+                    arrowDownTransition.style.opacity = "1"
 
 
+                    setTimeout(function() {
+                        dropdownBtn.classList.remove("startup");
+                    }, 500);
 
 
+                }, 100)
+                
+            }
 
 
-
-            var scrollButton = document.querySelector(".arrow-down");
-            scrollButton.addEventListener("click", function() {
-                console.log("SCROLLED")
-            })
 
 
 

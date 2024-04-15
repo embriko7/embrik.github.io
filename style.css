@@ -9,12 +9,10 @@ body{
     align-items:center;
     flex-direction:column;
     list-style-type:none;
+    overflow-x:hidden;
 }
 
-html{
-    scroll-behavior:smooth !important;
-
-}
+html { scroll-behavior: smooth; }
 
 
 
@@ -27,7 +25,6 @@ html{
     top:20px;
     left:20px;
     width:100px;
-    overflow:hidden;
 }
 
 
@@ -35,15 +32,15 @@ html{
 .dropdown-menu .dropdownBtn{
     height:25px;
     width:25px;
-    transition:all 0.5s ease;
     display:flex;
     justify-content:left;
+    transition:all 0.5s ease;
+    transform:translateX(0px);
 
-    
+
 }
-.dropdownBtn.active{
-    transform:translateX(calc((100px / 2) - (25px / 2)))
-}
+.dropdownBtn.active{transform:translateX(calc( (100px / 2) - (25px / 2) ))}
+.dropdownBtn.startup{transform:translateX(-45px);}
 
 
 
@@ -92,7 +89,9 @@ html{
 
 .logo img{
     width:95vw;
-    padding-bottom:80px;
+    transition:all 0.5s ease;
+    opacity:0;
+    transform:TranslateY(0);
     
 }
 
@@ -103,6 +102,9 @@ html{
 .arrow-down{
     position:absolute;
     bottom:50px;
+    transition:all 1s ease;
+    transform:translateY(-50px);
+    opacity:0;
 }
 .arrow-down .material-symbols-outlined{
     font-size:25px;
@@ -129,8 +131,10 @@ html{
 }
 
 .main-container section{
-    height:100vh;
+    height:100%;
     margin:20px;
+    padding:20px;
+
     background:beige;
     
 }
@@ -140,5 +144,12 @@ html{
 /*--------------------------------------------------------------*/
 
 
+
+@media only screen and (min-width: 40.063em) {
+    .logo img{
+        width:50vw;
+        background:blue;
+    }
+}
 
 
